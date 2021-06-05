@@ -8,17 +8,20 @@ const routers = new vueRouter({
     mode:"history"
 })
 routers.beforeEach((to,from,next)=>{
-    // console.log(to);
-    // console.log(from);
-    next();
-    // if(to.path == "/login"){
-    //     next();
-    // }else if(to.path=="/"){
-    //     next()
-    // }else{
-    //     console.log("访问了login除外的地址");
-    // }
+    console.log(to);
+    console.log(from);
+    if(to.path != "/login" && !sessionStorage.getItem("token")){
+        console.log("没有权限");
+        next({
+            path:"/login"
+        });
+    }else{
+        if(to.path != "/login" && sessionStorage.getItem("token")){
+            next();
+        }else if(to.path == "/login"){
+            next();
+        }
+    } 
 })
-
 export default routers
 

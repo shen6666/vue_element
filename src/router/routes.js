@@ -9,11 +9,6 @@ const routes = [
         component:()=>import("../views/system/Home.vue")
     },
     {
-        path:"/login",
-        name:"登录页",
-        component:()=>import("../views/system/Login.vue")
-    },
-    {
         path:"/add",
         name:"登录页",
         component:()=>import("../views/system/Adduser.vue")
@@ -24,7 +19,14 @@ const routes = [
         component:()=>import("../views/system/userlist.vue")
     },
 ];
+const stateRoutes = [
+    {
+        path:"/login",
+        name:"登录页",
+        component:()=>import("../views/system/Login.vue")
+    },
+]
 
 export default [
-    ...routes
+    ...routes,...stateRoutes
 ]

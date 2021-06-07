@@ -2,7 +2,7 @@
 <template>
   <div class="">
     <div class="form">
-      <h2>用户注册!</h2>
+      <h2>用户注册</h2>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="用户名" prop="username">
           <el-input el-input v-model="form.username"></el-input>
